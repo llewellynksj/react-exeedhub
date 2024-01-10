@@ -1,0 +1,63 @@
+:root {
+    --main-bg-color: #F5F9FB;
+    --primary-color: #004AAD;
+    --secondary-color: #FF02DE;
+    --tertiary-color: #B2D9E6;
+    --additional-color: #0097B3;
+  }
+  /**************** COLORS ****************/
+  /* Font colors */
+  .bg-font {
+    color: var(--main-bg-color);
+  }
+  .primary-font {
+    color: var(--primary-color);
+  }
+  .secondary-font {
+    color: var(--secondary-color);
+  }
+  .tertiary-font {
+    color: var(--tertiary-color);
+  }
+  .additional-font {
+    color: var(--additional-color);
+  }
+  /* Background colors */
+  .main-bg {
+    background-color: var(--main-bg-color);
+  }
+  .primary-bg {
+    background-color: var(--primary-color);
+  }
+  .secondary-bg {
+    background-color: var(--secondary-color);
+  }
+  .tertiary-bg {
+    background-color: var(--tertiary-color);
+  }
+  .additional-bg {
+    background-color: var(--additional-color);
+  }
+  /* ****************************** */
+  
+  
+  body {
+      font-family: "Josefin Sans", sans-serif;
+  }
+    
+  h1, h2, h3, h4, h5, h6 {
+      font-family: "Josefin Slab", sans-serif;
+  }
+    
+  p {
+      font-size: 1.2rem;
+  }
+  
+  button {
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    line-height: 1.8;
+    text-decoration: none;
+    padding: 5px 10px;
+  }

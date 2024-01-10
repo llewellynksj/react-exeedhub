@@ -1,0 +1,21 @@
+.NavBar {
+    background-color: #fff;
+    padding: 10px;
+}
+
+.PrimTextCol {
+    color: var(--primary-color);
+}
+.SecTextCol {
+    color: var(--secondary-color);
+}
+.AddTextCol {
+    color: var(--additional-color);
+}
+
+.PrimHover:hover {
+    color: var(--primary-color);
+}
+.SecHover:hover {
+    color: var(--secondary-color);
+}
