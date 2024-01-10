@@ -1,9 +1,10 @@
 import NavBar from "../../components/NavBar";
-import { Form, Alert, Button } from "react-bootstrap";
+import { Form, Alert } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
+import Button from "../../components/Button";
 
 const LoginForm = () => {
   const setCurrentUser = useSetCurrentUser();
@@ -73,7 +74,9 @@ const LoginForm = () => {
               {message}
             </Alert>
           ))}
-          <Button type="submit">Sign in</Button>
+          <Button type="submit" textColor="bg-font" bgColor="secondary-bg">
+            Sign in
+          </Button>
           {errors.non_field_errors?.map((message, idx) => (
             <Alert key={idx} variant="warning" className="mt-3">
               {message}
