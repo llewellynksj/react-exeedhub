@@ -1,6 +1,6 @@
 import Container from "react-bootstrap/Container";
 import { Nav, NavDropdown, Navbar, Image } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/exeedhublogo.webp";
 import styles from "../styles/NavBar.module.css";
 import {
@@ -28,10 +28,13 @@ const NavBar = () => {
         {/* Dropdown Nav Item - Schools */}
         <NavDropdown
           title={
-            <span
-              className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
-            >
-              Schools
+            <span>
+              <Link
+                className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
+                to="/schools"
+              >
+                Schools
+              </Link>
             </span>
           }
           id="basic-nav-dropdown"

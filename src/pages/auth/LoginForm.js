@@ -1,5 +1,4 @@
-import NavBar from "../../components/NavBar";
-import { Form, Alert } from "react-bootstrap";
+import { Form, Alert, Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
@@ -39,8 +38,7 @@ const LoginForm = () => {
 
   return (
     <>
-      <NavBar />
-      <div className="overflow-hidden p-4">
+      <Container className="overflow-hidden p-4">
         <h1>Login</h1>
         <Form onSubmit={handleSubmit}>
           <Form.Group controlId="username">
@@ -83,7 +81,7 @@ const LoginForm = () => {
             </Alert>
           ))}
         </Form>
-      </div>
+      </Container>
     </>
   );
 };
