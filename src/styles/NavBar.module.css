@@ -11,6 +11,10 @@
     padding: 10px;
 }
 
+.NavLink {
+    text-decoration: none;
+}
+
 .PrimTextCol {
     color: var(--primary-color);
 }
