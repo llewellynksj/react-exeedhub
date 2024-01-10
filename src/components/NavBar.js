@@ -144,7 +144,7 @@ const NavBar = () => {
             </NavLink>
             <NavLink
               className={`${styles.SecTextCol} ${styles.PrimHover} ${styles.NavLink} px-3`}
-              href="#link"
+              to="/register"
             >
               Register
             </NavLink>
