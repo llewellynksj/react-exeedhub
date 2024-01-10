@@ -3,8 +3,272 @@ import { Nav, NavDropdown, Navbar, Image } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/exeedhublogo.webp";
 import styles from "../styles/NavBar.module.css";
+import {
+  useCurrentUser,
+  useSetCurrentUser,
+} from "../contexts/CurrentUserContext";
+import axios from "axios";
 
 const NavBar = () => {
+  const currentUser = useCurrentUser();
+  const setCurrentUser = useSetCurrentUser();
+
+  const handleSignOut = async () => {
+    try {
+      await axios.post("dj-rest-auth/logout/");
+      setCurrentUser(null);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const loggedOutNav = (
+    <>
+      <Nav className="me-auto">
+        {/* Dropdown Nav Item - Schools */}
+        <NavDropdown
+          title={
+            <span
+              className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
+            >
+              Schools
+            </span>
+          }
+          id="basic-nav-dropdown"
+        >
+          <NavDropdown.Item>
+            <NavLink
+              className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
+            >
+              Primary
+            </NavLink>
+          </NavDropdown.Item>
+          <NavDropdown.Item>
+            <NavLink
+              className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
+            >
+              Secondary
+            </NavLink>
+          </NavDropdown.Item>
+          <NavDropdown.Item>
+            <NavLink
+              className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
+            >
+              Sixth Form/College
+            </NavLink>
+          </NavDropdown.Item>
+        </NavDropdown>
+
+        {/* Dropdown Nav Item - Discussion */}
+        <NavDropdown
+          title={
+            <span
+              className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
+            >
+              Discussion
+            </span>
+          }
+          id="basic-nav-dropdown"
+        >
+          <NavDropdown.Item>
+            <NavLink
+              className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
+              to="/discussion/popular"
+            >
+              Popular Threads
+            </NavLink>
+          </NavDropdown.Item>
+          <NavDropdown.Item>
+            <NavLink
+              className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
+            >
+              Browse Topics
+            </NavLink>
+          </NavDropdown.Item>
+        </NavDropdown>
+
+        {/* Dropdown Nav Item - Pre-loved */}
+        <NavDropdown
+          title={
+            <span
+              className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
+            >
+              Pre-loved
+            </span>
+          }
+          id="basic-nav-dropdown"
+        >
+          <NavDropdown.Item>
+            <NavLink
+              className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
+            >
+              New Items
+            </NavLink>
+          </NavDropdown.Item>
+          <NavDropdown.Item>
+            <NavLink
+              className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
+            >
+              Browse Categories
+            </NavLink>
+          </NavDropdown.Item>
+        </NavDropdown>
+      </Nav>
+
+      {/* Account Nav Options */}
+      <Nav className="ms-auto">
+        <NavLink
+          className={`${styles.SecTextCol} ${styles.PrimHover} ${styles.NavLink} px-3`}
+          to="/login"
+        >
+          Login
+        </NavLink>
+        <NavLink
+          className={`${styles.SecTextCol} ${styles.PrimHover} ${styles.NavLink} px-3`}
+          to="/register"
+        >
+          Register
+        </NavLink>
+      </Nav>
+    </>
+  );
+
+  const loggedInNav = (
+    <>
+      <Nav className="me-auto">
+        {/* Dropdown Nav Item - Schools */}
+        <NavDropdown
+          title={
+            <span
+              className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
+            >
+              Schools
+            </span>
+          }
+          id="basic-nav-dropdown"
+        >
+          <NavDropdown.Item>
+            <NavLink
+              className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
+            >
+              Primary
+            </NavLink>
+          </NavDropdown.Item>
+          <NavDropdown.Item>
+            <NavLink
+              className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
+            >
+              Secondary
+            </NavLink>
+          </NavDropdown.Item>
+          <NavDropdown.Item>
+            <NavLink
+              className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
+            >
+              Sixth Form/College
+            </NavLink>
+          </NavDropdown.Item>
+          <NavDropdown.Divider />
+          <NavDropdown.Item>
+            <NavLink
+              className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
+            >
+              Add a Review
+            </NavLink>
+          </NavDropdown.Item>
+        </NavDropdown>
+
+        {/* Dropdown Nav Item - Discussion */}
+        <NavDropdown
+          title={
+            <span
+              className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
+            >
+              Discussion
+            </span>
+          }
+          id="basic-nav-dropdown"
+        >
+          <NavDropdown.Item>
+            <NavLink
+              className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
+              to="/discussion/popular"
+            >
+              Popular Threads
+            </NavLink>
+          </NavDropdown.Item>
+          <NavDropdown.Item>
+            <NavLink
+              className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
+            >
+              Browse Topics
+            </NavLink>
+          </NavDropdown.Item>
+          <NavDropdown.Divider />
+          <NavDropdown.Item>
+            <NavLink
+              className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
+            >
+              Post New Thread
+            </NavLink>
+          </NavDropdown.Item>
+        </NavDropdown>
+
+        {/* Dropdown Nav Item - Pre-loved */}
+        <NavDropdown
+          title={
+            <span
+              className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
+            >
+              Pre-loved
+            </span>
+          }
+          id="basic-nav-dropdown"
+        >
+          <NavDropdown.Item>
+            <NavLink
+              className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
+            >
+              New Items
+            </NavLink>
+          </NavDropdown.Item>
+          <NavDropdown.Item>
+            <NavLink
+              className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
+            >
+              Browse Categories
+            </NavLink>
+          </NavDropdown.Item>
+          <NavDropdown.Divider />
+          <NavDropdown.Item>
+            <NavLink
+              className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
+            >
+              List an Item
+            </NavLink>
+          </NavDropdown.Item>
+        </NavDropdown>
+      </Nav>
+
+      {/* Account Nav Options */}
+      <Nav className="ms-auto">
+        <NavLink
+          className={`${styles.SecTextCol} ${styles.PrimHover} ${styles.NavLink} px-3`}
+          to="/"
+        >
+          {currentUser?.username}
+        </NavLink>
+        <NavLink
+          className={`${styles.SecTextCol} ${styles.PrimHover} ${styles.NavLink} px-3`}
+          to="/"
+          onClick={handleSignOut}
+        >
+          Logout
+        </NavLink>
+      </Nav>
+    </>
+  );
+
   return (
     <Navbar expand="lg">
       <Container>
@@ -19,136 +283,7 @@ const NavBar = () => {
         {/* Burger menu */}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            {/* Dropdown Nav Item - Schools */}
-            <NavDropdown
-              title={
-                <span
-                  className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
-                >
-                  Schools
-                </span>
-              }
-              id="basic-nav-dropdown"
-            >
-              <NavDropdown.Item>
-                <NavLink
-                  className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
-                >
-                  Primary
-                </NavLink>
-              </NavDropdown.Item>
-              <NavDropdown.Item>
-                <NavLink
-                  className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
-                >
-                  Secondary
-                </NavLink>
-              </NavDropdown.Item>
-              <NavDropdown.Item>
-                <NavLink
-                  className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
-                >
-                  Sixth Form/College
-                </NavLink>
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item>
-                <NavLink
-                  className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
-                >
-                  Add a Review
-                </NavLink>
-              </NavDropdown.Item>
-            </NavDropdown>
-
-            {/* Dropdown Nav Item - Discussion */}
-            <NavDropdown
-              title={
-                <span
-                  className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
-                >
-                  Discussion
-                </span>
-              }
-              id="basic-nav-dropdown"
-            >
-              <NavDropdown.Item>
-                <NavLink
-                  className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
-                  to="/discussion/popular"
-                >
-                  Popular Threads
-                </NavLink>
-              </NavDropdown.Item>
-              <NavDropdown.Item>
-                <NavLink
-                  className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
-                >
-                  Browse Topics
-                </NavLink>
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item>
-                <NavLink
-                  className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
-                >
-                  Post New Thread
-                </NavLink>
-              </NavDropdown.Item>
-            </NavDropdown>
-
-            {/* Dropdown Nav Item - Pre-loved */}
-            <NavDropdown
-              title={
-                <span
-                  className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
-                >
-                  Pre-loved
-                </span>
-              }
-              id="basic-nav-dropdown"
-            >
-              <NavDropdown.Item>
-                <NavLink
-                  className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
-                >
-                  New Items
-                </NavLink>
-              </NavDropdown.Item>
-              <NavDropdown.Item>
-                <NavLink
-                  className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
-                >
-                  Browse Categories
-                </NavLink>
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item>
-                <NavLink
-                  className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
-                >
-                  List an Item
-                </NavLink>
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-
-          {/* Account Nav Options */}
-          <Nav className="ms-auto">
-            <NavLink
-              className={`${styles.SecTextCol} ${styles.PrimHover} ${styles.NavLink} px-3`}
-              to="/login"
-            >
-              Login
-            </NavLink>
-            <NavLink
-              className={`${styles.SecTextCol} ${styles.PrimHover} ${styles.NavLink} px-3`}
-              to="/register"
-            >
-              Register
-            </NavLink>
-          </Nav>
+          {currentUser ? loggedInNav : loggedOutNav}
         </Navbar.Collapse>
       </Container>
     </Navbar>

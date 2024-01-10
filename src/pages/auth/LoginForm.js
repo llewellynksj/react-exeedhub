@@ -3,8 +3,11 @@ import { Form, Alert, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 
 const LoginForm = () => {
+  const setCurrentUser = useSetCurrentUser();
+
   const [loginData, setLoginData] = useState({
     username: "",
     password: "",
@@ -18,8 +21,8 @@ const LoginForm = () => {
     event.preventDefault();
 
     try {
-      await axios.post("/dj-rest-auth/login/", loginData);
-      // setCurrentUser(data.user);
+      const { data } = await axios.post("/dj-rest-auth/login/", loginData);
+      setCurrentUser(data.user);
       navigate("/");
     } catch (err) {
       setErrors(err.response?.data);
