@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import NavBar from "../../components/NavBar";
-import { Form, Button, Container, Alert } from "react-bootstrap";
+import { Form, Container, Alert } from "react-bootstrap";
+import Button from "../../components/Button";
 import axios from "axios";
 
 const RegisterForm = () => {
@@ -87,7 +88,9 @@ const RegisterForm = () => {
           </Alert>
         ))}
 
-        <Button type="submit">Register</Button>
+        <Button type="submit" textColor="bg-font" bgColor="secondary-bg">
+          Register
+        </Button>
         {errors.non_field_errors?.map((message, idx) => (
           <Alert key={idx} variant="warning" className="mt-3">
             {message}
