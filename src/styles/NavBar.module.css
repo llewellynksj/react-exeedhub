@@ -1,3 +1,11 @@
+:root {
+    --main-bg-color: #F5F9FB;
+    --primary-color: #004AAD;
+    --secondary-color: #FF02DE;
+    --tertiary-color: #B2D9E6;
+    --additional-color: #0097B3;
+  }
+
 .NavBar {
     background-color: #fff;
     padding: 10px;
@@ -18,4 +26,8 @@
 }
 .SecHover:hover {
     color: var(--secondary-color);
+}
+
+.hello {
+    color: red;
 }
