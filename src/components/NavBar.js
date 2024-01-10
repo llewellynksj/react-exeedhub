@@ -1,5 +1,5 @@
 import Container from "react-bootstrap/Container";
-import { Nav, NavDropdown, NavItem, Navbar, Image } from "react-bootstrap";
+import { Nav, NavDropdown, Navbar, Image } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/exeedhublogo.webp";
 import styles from "../styles/NavBar.module.css";

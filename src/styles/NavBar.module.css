@@ -23,7 +23,3 @@
 .SecHover:hover {
     color: var(--secondary-color);
 }
-
-.hello {
-    color: red;
-}

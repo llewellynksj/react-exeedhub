@@ -4,6 +4,7 @@ const Homepage = () => {
   return (
     <>
       <NavBar />
+      <h1 className="text-center m-3">This is the homepage!</h1>
     </>
   );
 };
