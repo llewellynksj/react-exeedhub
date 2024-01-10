@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { axiosReq } from "../../services/axiosDefaults";
 import { Container } from "react-bootstrap";
+import SchoolCard from "./SchoolCard";
 
 const SchoolList = () => {
   const [schoolData, setSchoolData] = useState([]);
@@ -37,9 +38,7 @@ const SchoolList = () => {
         <ul>
           {Array.isArray(schoolData) && schoolData.length > 0 ? (
             schoolData.map((school) => (
-              <li key={school.id}>
-                {school.school_name} - {school.school_level}
-              </li>
+              <SchoolCard key={school.id} {...school} />
             ))
           ) : (
             <p>No schools found</p>
