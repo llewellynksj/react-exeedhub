@@ -6,6 +6,7 @@ import {
   useSetCurrentUser,
 } from "../contexts/CurrentUserContext";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const LoggedInNav = () => {
   const currentUser = useCurrentUser();
@@ -104,7 +105,7 @@ const LoggedInNav = () => {
             </NavDropdown.Item>
           </LinkContainer>
           <NavDropdown.Divider />
-          <LinkContainer>
+          <LinkContainer to="/">
             <NavDropdown.Item>
               <Nav.Link className="Link">List an Item</Nav.Link>
             </NavDropdown.Item>
@@ -114,19 +115,22 @@ const LoggedInNav = () => {
 
       {/* Account Nav Options */}
       <Nav className="ms-auto">
-        <Nav.Link
-          className={`${styles.SecTextCol} ${styles.PrimHover} ${styles.NavLink} px-3`}
-          to="/"
-        >
-          {currentUser?.username}
-        </Nav.Link>
-        <Nav.Link
-          className={`${styles.SecTextCol} ${styles.PrimHover} ${styles.NavLink} px-3`}
-          to="/"
-          onClick={handleSignOut}
-        >
-          Logout
-        </Nav.Link>
+        <LinkContainer to="/">
+          <Nav.Link
+            className={`${styles.SecTextCol} ${styles.PrimHover} ${styles.NavLink} px-3`}
+            to="/"
+          >
+            {currentUser?.username}
+          </Nav.Link>
+        </LinkContainer>
+        <LinkContainer to="/">
+          <Nav.Link
+            className={`${styles.SecTextCol} ${styles.PrimHover} ${styles.NavLink} px-3`}
+            onClick={handleSignOut}
+          >
+            Logout
+          </Nav.Link>
+        </LinkContainer>
       </Nav>
     </>
   );

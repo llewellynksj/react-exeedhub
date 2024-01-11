@@ -42,9 +42,6 @@ const SchoolList = () => {
             schoolData.map((school) => (
               <>
                 <SchoolCard key={school.id} {...school} />
-                <Link to={`/schools/${id}/`} key={school.id} className="Link">
-                  View School
-                </Link>
               </>
             ))
           ) : (

@@ -79,18 +79,16 @@ const LoggedOutNav = () => {
 
       {/* Account Nav Options */}
       <Nav className="ms-auto">
-        <Nav.Link
-          className={`${styles.SecTextCol} ${styles.NavLink} px-3`}
-          to="/login"
-        >
-          Login
-        </Nav.Link>
-        <Nav.Link
-          className={`${styles.SecTextCol} ${styles.NavLink} px-3`}
-          to="/register"
-        >
-          Register
-        </Nav.Link>
+        <LinkContainer to="/login">
+          <Nav.Link className={`${styles.SecTextCol} ${styles.NavLink} px-3`}>
+            Login
+          </Nav.Link>
+        </LinkContainer>
+        <LinkContainer to="/register">
+          <Nav.Link className={`${styles.SecTextCol} ${styles.NavLink} px-3`}>
+            Register
+          </Nav.Link>
+        </LinkContainer>
       </Nav>
     </>
   );
