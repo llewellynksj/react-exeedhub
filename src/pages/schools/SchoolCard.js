@@ -1,5 +1,4 @@
 import { Card } from "react-bootstrap";
-import Button from "../../components/Button";
 import { Link } from "react-router-dom";
 
 const SchoolCard = (props) => {
@@ -26,8 +25,14 @@ const SchoolCard = (props) => {
           </Card.Text>
           <p>Ofsted: {ofsted}</p>
           <p>Overall Rating: {overall_rating}</p>
-          <Link to={`/schools/${id}`}>Read Reviews</Link>
-          <Link to={`/schools/${id}/add-review`}>Add a Review</Link>
+          <div className="d-flex justify-content-between">
+            <Link to={`/schools/${id}`} className="Link">
+              Read Reviews
+            </Link>
+            <Link to={`/schools/${id}/add-review`} className="Link">
+              Add a Review
+            </Link>
+          </div>
         </Card.Body>
       </Card>
     </>

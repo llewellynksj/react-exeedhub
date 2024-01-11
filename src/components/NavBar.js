@@ -28,92 +28,48 @@ const NavBar = () => {
         {/* Dropdown Nav Item - Schools */}
         <NavDropdown
           title={
-            <span>
-              <Link
-                className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
-                to="/schools"
-              >
-                Schools
-              </Link>
-            </span>
+            <Link className="Link" to="/schools">
+              Schools
+            </Link>
           }
           id="basic-nav-dropdown"
         >
           <NavDropdown.Item>
-            <NavLink
-              className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
-            >
-              Primary
-            </NavLink>
+            <NavLink className="Link">Primary</NavLink>
           </NavDropdown.Item>
           <NavDropdown.Item>
-            <NavLink
-              className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
-            >
-              Secondary
-            </NavLink>
+            <NavLink className="Link">Secondary</NavLink>
           </NavDropdown.Item>
           <NavDropdown.Item>
-            <NavLink
-              className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
-            >
-              Sixth Form/College
-            </NavLink>
+            <NavLink className="Link">Sixth Form/College</NavLink>
           </NavDropdown.Item>
         </NavDropdown>
 
         {/* Dropdown Nav Item - Discussion */}
         <NavDropdown
-          title={
-            <span
-              className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
-            >
-              Discussion
-            </span>
-          }
+          title={<Link className="Link">Discussion</Link>}
           id="basic-nav-dropdown"
         >
           <NavDropdown.Item>
-            <NavLink
-              className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
-              to="/discussion/popular"
-            >
+            <NavLink className="Link" to="/discussion/popular">
               Popular Threads
             </NavLink>
           </NavDropdown.Item>
           <NavDropdown.Item>
-            <NavLink
-              className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
-            >
-              Browse Topics
-            </NavLink>
+            <NavLink className="Link">Browse Topics</NavLink>
           </NavDropdown.Item>
         </NavDropdown>
 
         {/* Dropdown Nav Item - Pre-loved */}
         <NavDropdown
-          title={
-            <span
-              className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
-            >
-              Pre-loved
-            </span>
-          }
+          title={<Link className="Link">Pre-loved</Link>}
           id="basic-nav-dropdown"
         >
           <NavDropdown.Item>
-            <NavLink
-              className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
-            >
-              New Items
-            </NavLink>
+            <NavLink className="Link">New Items</NavLink>
           </NavDropdown.Item>
           <NavDropdown.Item>
-            <NavLink
-              className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
-            >
-              Browse Categories
-            </NavLink>
+            <NavLink className="Link">Browse Categories</NavLink>
           </NavDropdown.Item>
         </NavDropdown>
       </Nav>
@@ -121,13 +77,13 @@ const NavBar = () => {
       {/* Account Nav Options */}
       <Nav className="ms-auto">
         <NavLink
-          className={`${styles.SecTextCol} ${styles.PrimHover} ${styles.NavLink} px-3`}
+          className={`${styles.SecTextCol} ${styles.NavLink} px-3`}
           to="/login"
         >
           Login
         </NavLink>
         <NavLink
-          className={`${styles.SecTextCol} ${styles.PrimHover} ${styles.NavLink} px-3`}
+          className={`${styles.SecTextCol} ${styles.NavLink} px-3`}
           to="/register"
         >
           Register
@@ -142,11 +98,11 @@ const NavBar = () => {
         {/* Dropdown Nav Item - Schools */}
         <NavDropdown
           title={
-            <span
+            <Link
               className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
             >
               Schools
-            </span>
+            </Link>
           }
           id="basic-nav-dropdown"
         >
@@ -184,11 +140,11 @@ const NavBar = () => {
         {/* Dropdown Nav Item - Discussion */}
         <NavDropdown
           title={
-            <span
+            <Link
               className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
             >
               Discussion
-            </span>
+            </Link>
           }
           id="basic-nav-dropdown"
         >
@@ -220,11 +176,11 @@ const NavBar = () => {
         {/* Dropdown Nav Item - Pre-loved */}
         <NavDropdown
           title={
-            <span
+            <Link
               className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
             >
               Pre-loved
-            </span>
+            </Link>
           }
           id="basic-nav-dropdown"
         >

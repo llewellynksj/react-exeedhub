@@ -61,3 +61,11 @@
     text-decoration: none;
     padding: 5px 10px;
   }
+
+  .Link {
+    text-decoration: none;
+    color: var(--primary-color);
+  }
+  .Link:hover {
+    color: var(--secondary-color);
+  }

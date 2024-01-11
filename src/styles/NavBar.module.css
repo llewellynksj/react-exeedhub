@@ -7,19 +7,10 @@
     text-decoration: none;
 }
 
-.PrimTextCol {
-    color: var(--primary-color);
-}
 .SecTextCol {
     color: var(--secondary-color);
 }
-.AddTextCol {
-    color: var(--additional-color);
-}
 
-.PrimHover:hover {
+.SecTextCol:hover {
     color: var(--primary-color);
-}
-.SecHover:hover {
-    color: var(--secondary-color);
 }
