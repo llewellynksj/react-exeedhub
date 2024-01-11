@@ -3,7 +3,6 @@ import school_image from "../../assets/school.jpg";
 
 const School = (props) => {
   const {
-    id,
     school_name,
     school_level,
     ofsted,
