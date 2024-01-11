@@ -6,6 +6,7 @@ import LoginForm from "./pages/auth/LoginForm";
 import RegisterForm from "./pages/auth/RegisterForm";
 import SchoolFeed from "./pages/schools/SchoolFeed";
 import SchoolDetail from "./pages/schools/SchoolDetail";
+import AddReviewForm from "./pages/schools/AddReviewForm";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/register" element={<RegisterForm />} />
         <Route path="/schools" element={<SchoolFeed />} />
         <Route path="/schools/:id" element={<SchoolDetail />} />
+        <Route path="/schools/:id/add-review" element={<AddReviewForm />} />
 
         <Route render={() => <h1>404: page not found</h1>} />
       </Routes>
