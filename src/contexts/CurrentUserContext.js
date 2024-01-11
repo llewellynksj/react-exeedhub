@@ -3,6 +3,8 @@ import axios from "axios";
 import { axiosReq, axiosRes } from "../services/axiosDefaults";
 import { useNavigate } from "react-router-dom";
 
+// Code from CI's Moments Walkthrough project
+
 export const CurrentUserContext = createContext();
 export const SetCurrentUserContext = createContext();
 

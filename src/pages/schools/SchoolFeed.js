@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import { axiosReq } from "../../services/axiosDefaults";
 import { Container } from "react-bootstrap";
 import SchoolCard from "./SchoolCard";
+import { Link, useParams } from "react-router-dom";
 
 const SchoolList = () => {
   const [schoolData, setSchoolData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { id } = useParams();
 
   useEffect(() => {
     const fetchSchoolData = async () => {
@@ -38,7 +40,12 @@ const SchoolList = () => {
         <ul>
           {Array.isArray(schoolData) && schoolData.length > 0 ? (
             schoolData.map((school) => (
-              <SchoolCard key={school.id} {...school} />
+              <>
+                <SchoolCard key={school.id} {...school} />
+                <Link to={`/schools/${id}/`} className="Link">
+                  View School
+                </Link>
+              </>
             ))
           ) : (
             <p>No schools found</p>
