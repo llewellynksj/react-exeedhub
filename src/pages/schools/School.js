@@ -1,6 +1,5 @@
 import { Card, Container, Row, Col } from "react-bootstrap";
 import school_image from "../../assets/school.jpg";
-import styles from "../../styles/School.module.css";
 
 const School = (props) => {
   const {
