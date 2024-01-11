@@ -3,6 +3,7 @@ import { Container } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../services/axiosDefaults";
 import { useState } from "react";
+import SchoolCard from "./SchoolCard";
 
 const SchoolDetail = () => {
   const { id } = useParams();
@@ -26,7 +27,9 @@ const SchoolDetail = () => {
 
   return (
     <>
-      <Container></Container>
+      <Container>
+        <SchoolCard {...school.results[0]} />
+      </Container>
     </>
   );
 };
