@@ -1,5 +1,6 @@
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 const SchoolCard = (props) => {
   const {
@@ -11,6 +12,8 @@ const SchoolCard = (props) => {
     ofsted,
     overall_rating,
   } = props;
+
+  const currentUser = useCurrentUser();
 
   return (
     <>
@@ -25,14 +28,16 @@ const SchoolCard = (props) => {
           </Card.Text>
           <p>Ofsted: {ofsted}</p>
           <p>Overall Rating: {overall_rating}</p>
-          <div className="d-flex justify-content-between">
+          {/* <div className="d-flex justify-content-between">
             <Link to={`/schools/${id}`} className="Link">
               Read Reviews
             </Link>
-            <Link to={`/schools/${id}/add-review`} className="Link">
-              Add a Review
-            </Link>
-          </div>
+            {currentUser && (
+              <Link to={`/schools/${id}/add-review`} className="Link">
+                Add a Review
+              </Link>
+            )}
+          </div> */}
         </Card.Body>
       </Card>
     </>

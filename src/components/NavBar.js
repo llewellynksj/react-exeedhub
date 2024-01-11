@@ -99,6 +99,7 @@ const NavBar = () => {
         <NavDropdown
           title={
             <Link
+              to="/schools"
               className={`${styles.PrimTextCol} ${styles.SecHover} ${styles.NavLink}`}
             >
               Schools

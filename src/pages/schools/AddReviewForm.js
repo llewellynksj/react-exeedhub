@@ -1,10 +1,13 @@
-import React from "react";
+import { Container } from "react-bootstrap";
 
-const AddReviewForm = () => {
+const AddReviewForm = (props) => {
+  const { school_name } = props;
+
   return (
-    <div>
-      <h1>Add Review Form</h1>
-    </div>
+    <Container className="overflow-hidden">
+      <h2>Add Review - {school_name}</h2>
+      <div />
+    </Container>
   );
 };
 

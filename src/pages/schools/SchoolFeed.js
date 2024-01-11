@@ -33,7 +33,7 @@ const SchoolList = () => {
 
   return (
     <>
-      <Container>
+      <Container className="overflow-hidden p-4">
         <h2>School List</h2>
         <ul>
           {Array.isArray(schoolData) && schoolData.length > 0 ? (
