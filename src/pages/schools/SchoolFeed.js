@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { axiosReq } from "../../services/axiosDefaults";
 import { Container } from "react-bootstrap";
 import SchoolCard from "./SchoolCard";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const SchoolList = () => {
   const [schoolData, setSchoolData] = useState([]);

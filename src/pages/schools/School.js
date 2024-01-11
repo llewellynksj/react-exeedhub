@@ -1,35 +1,47 @@
-import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { axiosReq } from "../../services/axiosDefaults";
-import { useState } from "react";
-import { Container } from "react-bootstrap";
+import { Card, Container, Row, Col } from "react-bootstrap";
+import school_image from "../../assets/school.jpg";
+import styles from "../../styles/School.module.css";
 
-const School = () => {
-  const { id } = useParams();
-  const [school, setSchool] = useState({ results: [] });
-
-  useEffect(() => {
-    const handleMount = async () => {
-      try {
-        const [{ data: school }] = await Promise.all([
-          axiosReq.get(`/schools/${id}`),
-        ]);
-        setSchool({ results: [school] });
-        console.log(school);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-
-    handleMount();
-  }, [id]);
+const School = (props) => {
+  const {
+    id,
+    school_name,
+    school_level,
+    ofsted,
+    overall_rating,
+    street_address,
+    locality_name,
+  } = props;
 
   return (
-    <>
-      <Container>
-        <h1>School</h1>
-      </Container>
-    </>
+    <Container className="overflow-hidden p-4">
+      <h1>{school_name}</h1>
+
+      <Row className="flex-column-reverse flex-md-row">
+        <Col md={6}>
+          <Card style={{ width: "100%" }}>
+            <Card.Body>
+              <Card.Title className="text-uppercase">Overview</Card.Title>
+              <Card.Text>Level: {school_level}</Card.Text>
+              <Card.Text>
+                Address: {street_address}, {locality_name}
+              </Card.Text>
+              <Card.Text>
+                <p>Ofsted: {ofsted}</p>
+              </Card.Text>
+              <Card.Text>
+                <p>Overall Rating: {overall_rating}</p>
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col md={6} className="mb-3 mb-md-0">
+          <Card style={{ width: "100%" }}>
+            <Card.Img variant="top" src={school_image} />
+          </Card>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
