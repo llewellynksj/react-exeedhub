@@ -16,7 +16,6 @@ const SchoolDetail = () => {
           axiosReq.get(`/schools/${id}`),
         ]);
         setSchool({ results: [school] });
-        console.log(school);
       } catch (err) {
         console.log(err);
       }

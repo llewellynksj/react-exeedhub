@@ -24,12 +24,8 @@ const School = (props) => {
               <Card.Text>
                 Address: {street_address}, {locality_name}
               </Card.Text>
-              <Card.Text>
-                <p>Ofsted: {ofsted}</p>
-              </Card.Text>
-              <Card.Text>
-                <p>Overall Rating: {overall_rating}</p>
-              </Card.Text>
+              <Card.Text>Ofsted: {ofsted}</Card.Text>
+              <Card.Text>Overall Rating: {overall_rating}</Card.Text>
             </Card.Body>
           </Card>
         </Col>
@@ -39,6 +35,9 @@ const School = (props) => {
           </Card>
         </Col>
       </Row>
+
+      {/* List the Reviews */}
+      {/* Add a Review */}
     </Container>
   );
 };
